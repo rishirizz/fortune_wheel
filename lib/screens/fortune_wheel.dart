@@ -44,10 +44,12 @@ class _FortuneWheelState extends State<FortuneWheel>
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Colors.green, Colors.blue.withOpacity(0.2)])),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.green, Colors.blue.withOpacity(0.2)],
+          ),
+        ),
         child: AnimatedBuilder(
             animation: _ani!,
             builder: (context, child) {
