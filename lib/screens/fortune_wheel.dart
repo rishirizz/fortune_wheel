@@ -20,14 +20,14 @@ class _FortuneWheelState extends State<FortuneWheel>
   AnimationController? _ctrl;
   Animation? _ani;
   final List<Fortune> _items = [
-    Fortune("apple", Colors.accents[0]),
-    Fortune("raspberry", Colors.accents[2]),
-    Fortune("grapes", Colors.accents[4]),
-    Fortune("fruit", Colors.accents[6]),
-    Fortune("milk", Colors.accents[8]),
-    Fortune("salad", Colors.accents[10]),
-    Fortune("cheese", Colors.accents[12]),
-    Fortune("carrot", Colors.accents[14]),
+    Fortune("apple", const Color(0xffB087FF)),
+    Fortune("raspberry", const Color(0xff41237A)),
+    Fortune("grapes", const Color(0xffB087FF)),
+    Fortune("fruit", const Color(0xff41237A)),
+    Fortune("milk", const Color(0xffB087FF)),
+    Fortune("salad", const Color(0xff41237A)),
+    Fortune("cheese", const Color(0xffB087FF)),
+    Fortune("carrot", const Color(0xff41237A)),
   ];
 
   @override
@@ -43,11 +43,11 @@ class _FortuneWheelState extends State<FortuneWheel>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.green, Colors.blue.withOpacity(0.2)],
+            colors: [Color(0xff1C0649), Color(0xff282828)],
           ),
         ),
         child: AnimatedBuilder(
@@ -69,22 +69,30 @@ class _FortuneWheelState extends State<FortuneWheel>
   }
 
   _buildGo() {
-    return Material(
-      color: Colors.white,
-      shape: const CircleBorder(),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        child: Container(
-          alignment: Alignment.center,
-          height: 72,
-          width: 72,
-          child: const Text(
-            "GO",
-            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+    return InkWell(
+      customBorder: const CircleBorder(),
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xff1C0649), Color(0xff282828)],
+          ),
+          shape: BoxShape.circle,
+        ),
+        alignment: Alignment.center,
+        height: 72,
+        width: 72,
+        child: const Text(
+          "GO",
+          style: TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
-        onTap: _animation,
       ),
+      onTap: _animation,
     );
   }
 
