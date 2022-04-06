@@ -50,7 +50,10 @@ class _FortuneWheelState extends State<FortuneWheel>
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xff1C0649), Color(0xff282828)],
+            colors: [
+              Color(0xff1C0649),
+              Color(0xff282828),
+            ],
           ),
         ),
         child: AnimatedBuilder(

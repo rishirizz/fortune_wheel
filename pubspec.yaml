@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   audioplayers: ^0.20.1
   flutter_launcher_icons: ^0.9.2
+  lottie: ^1.2.2
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +34,7 @@ flutter:
     - assets/milk.png
     - assets/raspberry.png
     - assets/salad.png
+    - assets/fortune_wheel.json
 
 flutter_icons:
   image_path: "assets/dollar.png"

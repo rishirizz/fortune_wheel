@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fortune_wheel/screens/fortune_wheel.dart';
+import 'package:fortune_wheel/screens/splash_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -24,7 +25,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FortuneWheel(),
+      home: const SplashScreen(),
+      onGenerateRoute: (RouteSettings settings) {
+        debugPrint('build route for ${settings.name}');
+        var routes = <String, WidgetBuilder>{
+          '/splash': (BuildContext context) => const SplashScreen(),
+          '/fortune': (BuildContext context) => const FortuneWheel(),
+        };
+        WidgetBuilder builder = routes[settings.name]!;
+        return MaterialPageRoute(
+          builder: (ctx) => builder(ctx),
+        );
+      },
     );
   }
 }
