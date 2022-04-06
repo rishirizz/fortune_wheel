@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fortune_wheel/components/fortune.dart';
 import 'package:fortune_wheel/screens/board_view.dart';
 
@@ -97,6 +98,7 @@ class _FortuneWheelState extends State<FortuneWheel>
   }
 
   _animation() {
+    SystemSound.play(SystemSoundType.alert);
     if (!_ctrl!.isAnimating) {
       var _random = Random().nextDouble();
       _angle = 20 + Random().nextInt(5) + _random;
