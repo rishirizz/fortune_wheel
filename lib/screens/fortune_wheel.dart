@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fortune_wheel/components/fortune.dart';
 import 'package:fortune_wheel/screens/board_view.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class FortuneWheel extends StatefulWidget {
   const FortuneWheel({Key? key}) : super(key: key);
@@ -19,6 +20,7 @@ class _FortuneWheelState extends State<FortuneWheel>
   double _angle = 0;
   double _current = 0;
   AnimationController? _ctrl;
+  final player = AudioCache();
   Animation? _ani;
   final List<Fortune> _items = [
     Fortune("apple", const Color(0xffB087FF)),
@@ -99,6 +101,7 @@ class _FortuneWheelState extends State<FortuneWheel>
 
   _animation() {
     SystemSound.play(SystemSoundType.alert);
+    player.play('note1.wav');
     if (!_ctrl!.isAnimating) {
       var _random = Random().nextDouble();
       _angle = 20 + Random().nextInt(5) + _random;
