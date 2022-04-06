@@ -35,8 +35,8 @@ flutter:
     - assets/salad.png
 
 flutter_icons:
-  image_path: "assets/money.png"
+  image_path: "assets/dollar.png"
   android: true
   ios: false
   adaptive_icon_background: "#41237A"
-  adaptive_icon_foreground: "assets/money.png"
+  adaptive_icon_foreground: "assets/dollar.png"
